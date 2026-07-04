@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Access Rejected</title>
+</head>
+<body style="
+    margin:0;
+    background:#ffffff;
+    color:#24292f;
+    font-size:14px;
+    line-height:1.5;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+">
+
+<table width="100%" cellpadding="0" cellspacing="0" align="center"
+       style="max-width:544px;margin:auto;padding:16px;">
+
+    <tr>
+        <td align="center">
+
+            <div style="margin-bottom:12px;">
+                <div style="
+                    width:48px;
+                    height:48px;
+                    line-height:48px;
+                    border-radius:50%;
+                    background:#24292f;
+                    color:#ffffff;
+                    font-size:22px;
+                    font-weight:700;
+                    text-align:center;
+                    margin:auto;">
+                    Y
+                </div>
+            </div>
+
+            <h2 style="
+                margin:8px 0 0;
+                font-size:24px;
+                font-weight:400;
+                line-height:1.25;
+                color:#24292f;">
+                Administrator access rejected,
+                <strong style="font-weight:600;"
+                        th:text="${username}">
+                    User
+                </strong>
+            </h2>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="16"></td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <table width="100%"
+                   cellpadding="0"
+                   cellspacing="0"
+                   style="
+                        border:1px solid #d0d7de;
+                        border-radius:6px;
+                        padding:16px;
+                   ">
+
+                <tr>
+                    <td>
+
+                        <p style="
+                            margin-top:0;
+                            margin-bottom:16px;
+                            color:#24292f;">
+                            Your administrator access request has been rejected.
+                        </p>
+
+                        <span style="
+                            display:inline-block;
+                            padding:4px 10px;
+                            border-radius:999px;
+                            background:#ffebe9;
+                            color:#cf222e;
+                            font-size:12px;
+                            font-weight:500;">
+                            REJECTED
+                        </span>
+
+                        <table width="100%"
+                               cellpadding="0"
+                               cellspacing="0"
+                               style="margin-top:20px;">
+
+                            <tr>
+                                <td style="
+                                    padding:8px 0;
+                                    color:#57606a;">
+                                    Request ID
+                                </td>
+
+                                <td align="right"
+                                    style="
+                                        color:#24292f;
+                                        font-weight:500;"
+                                    th:text="${requestId}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="
+                                    padding:8px 0;
+                                    color:#57606a;">
+                                    Reviewed By
+                                </td>
+
+                                <td align="right"
+                                    style="color:#24292f;"
+                                    th:text="${reviewedBy}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="
+                                    padding:8px 0;
+                                    color:#57606a;">
+                                    Reviewed At
+                                </td>
+
+                                <td align="right"
+                                    style="color:#24292f;"
+                                    th:text="${reviewedAt}">
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <hr style="
+                            border:none;
+                            border-top:1px solid #d8dee4;
+                            margin:16px 0;">
+
+                        <p style="
+                            margin:0;
+                            color:#57606a;">
+                            You are welcome to submit another admin access request.
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="16"></td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <p style="
+                margin:0;
+                color:#57606a;
+                font-size:13px;">
+                This notification was sent because your administrator
+                access request was reviewed.
+            </p>
+
+            <hr style="
+                margin:20px 0;
+                border:none;
+                border-top:1px solid #d8dee4;">
+
+            <p style="
+                text-align:center;
+                font-size:12px;
+                color:#8c959f;
+                margin:0;">
+                Yash Inc.
+            </p>
+
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+
+<body style="
+    margin:0;
+    background:#ffffff;
+    color:#24292f;
+    font-size:14px;
+    line-height:1.5;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+">
+
+<table width="100%"
+       cellpadding="0"
+       cellspacing="0"
+       align="center"
+       style="
+            max-width:544px;
+            margin:auto;
+            padding:16px;
+       ">
+
+    <tr>
+        <td align="center">
+
+            <div style="margin-bottom:12px;">
+                <div style="
+                    width:48px;
+                    height:48px;
+                    line-height:48px;
+                    border-radius:50%;
+                    background:#24292f;
+                    color:#ffffff;
+                    font-size:22px;
+                    font-weight:700;
+                    text-align:center;
+                    margin:auto;">
+                    Y
+                </div>
+            </div>
+
+            <h2 style="
+                margin:8px 0 0;
+                font-size:24px;
+                font-weight:400;
+                line-height:1.25;
+                color:#24292f;
+            ">
+                Welcome,
+                <strong style="font-weight:600;"
+                        th:text="${username}">
+                    User
+                </strong>
+            </h2>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="16"></td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <table width="100%"
+                   cellpadding="0"
+                   cellspacing="0"
+                   style="
+                        border:1px solid #d0d7de;
+                        border-radius:6px;
+                        padding:16px;
+                   ">
+
+                <tr>
+                    <td>
+
+                        <p style="
+                            margin-top:0;
+                            color:#24292f;
+                        ">
+                            Your account has been created successfully.
+                        </p>
+
+                        <p style="
+                            color:#57606a;
+                            margin-bottom:0;
+                        ">
+                            You can now access the platform and begin using
+                            available features associated with your account.
+                        </p>
+
+                        <hr style="
+                            border:none;
+                            border-top:1px solid #d8dee4;
+                            margin:16px 0;
+                        ">
+
+                        <p style="
+                            margin:0;
+                            color:#57606a;
+                        ">
+                            For security purposes, keep your account credentials
+                            confidential and ensure your password remains secure.
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="16"></td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <p style="
+                margin:0;
+                color:#57606a;
+                font-size:13px;
+            ">
+                If you did not create this account, please contact support
+                immediately.
+            </p>
+
+            <hr style="
+                margin:20px 0;
+                border:none;
+                border-top:1px solid #d8dee4;">
+
+            <p style="
+                text-align:center;
+                font-size:12px;
+                color:#8c959f;
+                margin:0;">
+                Yash Inc.
+            </p>
+
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

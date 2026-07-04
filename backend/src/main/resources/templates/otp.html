@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+</head>
+
+<body style="
+    margin:0;
+    padding:0;
+    background-color:#ffffff;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:#24292f;
+">
+
+<table align="center"
+       width="100%"
+       cellpadding="0"
+       cellspacing="0"
+       style="max-width:544px;margin:auto;padding:24px;">
+
+    <!-- Logo / Header -->
+    <tr>
+        <td align="center">
+
+            <div style="margin-bottom:12px;">
+                <div style="
+                    width:48px;
+                    height:48px;
+                    line-height:48px;
+                    border-radius:50%;
+                    background:#24292f;
+                    color:#ffffff;
+                    font-size:22px;
+                    font-weight:700;
+                    text-align:center;
+                    margin:auto;">
+                    Y
+                </div>
+            </div>
+
+            <h2 style="
+                margin:12px 0 0 0;
+                font-size:24px;
+                font-weight:400;
+                line-height:1.4;
+                color:#24292f;">
+                <span>
+                    Please verify your identity,
+                </span>
+                <strong th:text="${username}">
+                    username
+                </strong>
+            </h2>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="24"></td>
+    </tr>
+
+    <!-- Main Card -->
+    <tr>
+        <td>
+
+            <table width="100%"
+                   cellpadding="0"
+                   cellspacing="0"
+                   style="
+                        border:1px solid #d0d7de;
+                        border-radius:8px;
+                        padding:24px;
+                   ">
+
+                <tr>
+                    <td>
+
+                        <p style="
+                            margin-top:0;
+                            margin-bottom:16px;
+                            font-size:15px;
+                            line-height:1.5;
+                            color:#24292f;">
+                            Here is your verification code:
+                        </p>
+
+                        <!-- OTP -->
+                        <table width="100%">
+                            <tr>
+                                <td align="center">
+
+                                    <div style="
+                                        font-size:32px;
+                                        font-weight:600;
+                                        letter-spacing:8px;
+                                        color:#24292f;
+                                        padding:12px 0;
+                                    "
+                                         th:text="${otp}">
+                                        XXXXXX
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p style="
+                            margin-top:20px;
+                            margin-bottom:10px;
+                            font-size:14px;
+                            color:#57606a;
+                            line-height:1.5;">
+                            This code is valid for
+                            <strong>5 minutes</strong>
+                            and can only be used once.
+                        </p>
+
+                        <p style="
+                            margin-top:0;
+                            margin-bottom:10px;
+                            font-size:14px;
+                            color:#57606a;
+                            line-height:1.5;">
+                            <strong>Please don't share this code with anyone.</strong>
+                            Our team will never ask for it via email, chat, or phone.
+                        </p>
+
+                        <p style="
+                            margin-top:20px;
+                            margin-bottom:0;
+                            font-size:14px;
+                            color:#24292f;">
+                            Thanks,<br>
+                            <strong>
+                                Yash Team
+                            </strong>
+                        </p>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="20"></td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+        <td>
+
+            <p style="
+                font-size:13px;
+                color:#57606a;
+                line-height:1.5;
+                margin:0;">
+                <span>
+                    You're receiving this email because a verification code was requested for your account.
+                </span>
+            </p>
+
+            <hr style="
+                margin:20px 0;
+                border:none;
+                border-top:1px solid #d8dee4;">
+
+            <p style="
+                text-align:center;
+                font-size:12px;
+                color:#8c959f;
+                margin:0;">
+                Yash Inc.
+            </p>
+
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
