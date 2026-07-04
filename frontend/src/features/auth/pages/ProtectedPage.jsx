@@ -71,7 +71,10 @@ export default function ProtectedPage() {
     try {
       const response = await sendEmailVerificationOtp({ email }).unwrap();
       if (response.success) {
-        toast.info("Demo Mode: Email delivery is disabled in the deployed environment due to free-tier hosting limitations. The email workflow is implemented but actual emails are not sent in this demo.");
+        toast.info("Demo Mode: Email delivery is disabled in the deployed environment due to free-tier hosting limitations. The email workflow is implemented but actual emails are not sent in this demo.", {
+          id: "email-demo",
+          duration: 15000,
+        });
         toast.success(response.message);
         setActiveView(VIEWS.EMAIL_VERIFICATION);
       }
