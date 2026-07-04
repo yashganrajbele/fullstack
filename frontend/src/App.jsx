@@ -18,6 +18,8 @@ const App = () => {
       <Toaster
         position="top-center"
         duration={7500}
+        visibleToasts={5}
+        expand={true}
         toastOptions={{
           classNames: {
             error: "!bg-red-100 !text-red-500 !border-red-300",
