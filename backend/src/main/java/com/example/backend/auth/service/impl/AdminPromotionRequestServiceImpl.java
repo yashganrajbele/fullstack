@@ -75,14 +75,14 @@ public class AdminPromotionRequestServiceImpl implements AdminPromotionRequestSe
         account.getRoles().add(Role.ROLE_ADMIN);
         request.setStatus(RequestStatus.APPROVED);
         request.setReviewedBy(SecurityUtils.getUsername());
-        eventPublisher.publish(new RequestStatusUpdatedEvent(
-                requestId,
-                account.getUsername(),
-                account.getEmail(),
-                RequestStatus.APPROVED,
-                request.getUpdatedAt(),
-                request.getReviewedBy()
-        ));
+//        eventPublisher.publish(new RequestStatusUpdatedEvent(
+//                requestId,
+//                account.getUsername(),
+//                account.getEmail(),
+//                RequestStatus.APPROVED,
+//                request.getUpdatedAt(),
+//                request.getReviewedBy()
+//        ));
         return adminPromotionRequestMapper.toResponse(request);
     }
 
@@ -94,14 +94,14 @@ public class AdminPromotionRequestServiceImpl implements AdminPromotionRequestSe
                 .orElseThrow(() -> new BaseException(ErrorCode.NOT_FOUND));
         request.setStatus(RequestStatus.REJECTED);
         request.setReviewedBy(SecurityUtils.getUsername());
-        eventPublisher.publish(new RequestStatusUpdatedEvent(
-                requestId,
-                account.getUsername(),
-                account.getEmail(),
-                RequestStatus.REJECTED,
-                request.getUpdatedAt(),
-                request.getReviewedBy()
-        ));
+//        eventPublisher.publish(new RequestStatusUpdatedEvent(
+//                requestId,
+//                account.getUsername(),
+//                account.getEmail(),
+//                RequestStatus.REJECTED,
+//                request.getUpdatedAt(),
+//                request.getReviewedBy()
+//        ));
         return adminPromotionRequestMapper.toResponse(request);
     }
 }

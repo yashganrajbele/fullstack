@@ -27,7 +27,7 @@ public class EmailVerificationServiceImpl implements EmailVerificationService {
     private final EventPublisher eventPublisher;
 
     @Override
-    public void sendEmailVerificationOtp(String email) {
+    public String sendEmailVerificationOtp(String email) {
         AuthAccount account = authAccountRepository
                 .findByEmail(email)
                 .orElseThrow(() -> new BaseException(ErrorCode.NOT_FOUND));
@@ -43,11 +43,12 @@ public class EmailVerificationServiceImpl implements EmailVerificationService {
                 .otp(otpGenerator.generateOtp())
                 .build();
         emailVerificationRepository.save(otp);
-        eventPublisher.publish(new EmailVerificationOtpRequestedEvent(
-                email,
-                account.getUsername(),
-                otp.getOtp()
-        ));
+        return otp.getOtp();
+//        eventPublisher.publish(new EmailVerificationOtpRequestedEvent(
+//                email,
+//                account.getUsername(),
+//                otp.getOtp()
+//        ));
     }
 
     @Override

@@ -31,7 +31,7 @@ public class ForgotPasswordServiceImpl implements ForgotPasswordService {
     private final EventPublisher eventPublisher;
 
     @Override
-    public void sendPasswordResetOtp(String email) {
+    public String sendPasswordResetOtp(String email) {
         AuthAccount account = authAccountRepository.findByEmail(email)
                 .orElseThrow(() -> new BaseException(ErrorCode.NOT_FOUND));
         if (account.getPassword() == null) {
@@ -44,16 +44,17 @@ public class ForgotPasswordServiceImpl implements ForgotPasswordService {
                     }
                     passwordResetOtpRepository.delete(existing);
                 });
-        PasswordResetOtp passwordResetOtp = PasswordResetOtp.builder()
+        PasswordResetOtp otp = PasswordResetOtp.builder()
                 .email(email)
                 .otp(otpGenerator.generateOtp())
                 .build();
-        passwordResetOtpRepository.save(passwordResetOtp);
-        eventPublisher.publish(new PasswordResetOtpRequestedEvent(
-                email,
-                account.getUsername(),
-                passwordResetOtp.getOtp()
-        ));
+        passwordResetOtpRepository.save(otp);
+        return otp.getOtp();
+//        eventPublisher.publish(new PasswordResetOtpRequestedEvent(
+//                email,
+//                account.getUsername(),
+//                passwordResetOtp.getOtp()
+//        ));
     }
 
     @Override

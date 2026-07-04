@@ -53,10 +53,10 @@ public class AuthServiceImpl implements AuthService {
                 .password(passwordEncoder.encode(request.password()))
                 .build();
         AuthAccount savedAccount = authAccountRepository.save(account);
-        eventPublisher.publish(new AccountCreatedEvent(
-                savedAccount.getEmail(),
-                savedAccount.getUsername()
-        ));
+//        eventPublisher.publish(new AccountCreatedEvent(
+//                savedAccount.getEmail(),
+//                savedAccount.getUsername()
+//        ));
         CustomUserDetails userDetails = new CustomUserDetails(savedAccount);
         String token = jwtService.generateToken(userDetails);
         return authMapper.toResponse(token);
@@ -103,10 +103,10 @@ public class AuthServiceImpl implements AuthService {
                 .emailVerified(googleUser.emailVerified())
                 .build();
         AuthAccount savedAccount = authAccountRepository.save(account);
-        eventPublisher.publish(new AccountCreatedEvent(
-                savedAccount.getEmail(),
-                savedAccount.getUsername()
-        ));
+//        eventPublisher.publish(new AccountCreatedEvent(
+//                savedAccount.getEmail(),
+//                savedAccount.getUsername()
+//        ));
         return savedAccount;
     }
 

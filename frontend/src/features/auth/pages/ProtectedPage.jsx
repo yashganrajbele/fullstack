@@ -70,10 +70,12 @@ export default function ProtectedPage() {
   const handleSendEmailVerificationOtp = async (email) => {
     try {
       const response = await sendEmailVerificationOtp({ email }).unwrap();
-      toast.success(response.message);
-      setActiveView(VIEWS.EMAIL_VERIFICATION);
+      if (response.success) {
+        toast.info("Demo Mode: Email delivery is disabled in the deployed environment due to free-tier hosting limitations. The email workflow is implemented but actual emails are not sent in this demo.");
+        toast.success(response.message);
+        setActiveView(VIEWS.EMAIL_VERIFICATION);
+      }
     } catch (error) {
-      console.error(error);
       toast.error(error?.data?.error?.message);
     }
   };

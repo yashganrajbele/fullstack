@@ -62,12 +62,12 @@ public class AccountManagementServiceImpl implements AccountManagementService {
         target.getRoles().remove(Role.ROLE_ADMIN);
         target.getRoles().add(Role.ROLE_USER);
         AuthAccount savedAccount = authAccountRepository.save(target);
-        eventPublisher.publish(new AdminAccessRevokedEvent(
-                savedAccount.getEmail(),
-                savedAccount.getUsername(),
-                SecurityUtils.getUsername(),
-                savedAccount.getUpdatedAt()
-        ));
+//        eventPublisher.publish(new AdminAccessRevokedEvent(
+//                savedAccount.getEmail(),
+//                savedAccount.getUsername(),
+//                SecurityUtils.getUsername(),
+//                savedAccount.getUpdatedAt()
+//        ));
         return authMapper.toResponse(savedAccount);
     }
 

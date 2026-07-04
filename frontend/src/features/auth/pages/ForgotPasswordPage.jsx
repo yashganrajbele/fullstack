@@ -22,10 +22,12 @@ const ForgotPasswordPage = () => {
   const onSubmit = async (data) => {
     try {
       const response = await sendPasswordResetOtp(data).unwrap();
-      toast.success(response.message);
-      navigate("/auth/reset-password", { state: { email: data.email } });
+      if (response.success) {
+        toast.info("Demo Mode: Email delivery is disabled in the deployed environment due to free-tier hosting limitations. The email workflow is implemented but actual emails are not sent in this demo.");
+        toast.success(response.message);
+        navigate("/auth/reset-password", { state: { email: data.email } });
+      }
     } catch (error) {
-      console.error(error);
       toast.error(error.data.error.message);
     }
   };

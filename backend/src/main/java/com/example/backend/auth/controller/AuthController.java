@@ -72,10 +72,10 @@ public class AuthController {
             @Valid @RequestBody SendOtpRequest request,
             HttpServletRequest httpRequest
     ) {
-        forgotPasswordService.sendPasswordResetOtp(request.email());
+        String otp = forgotPasswordService.sendPasswordResetOtp(request.email());
         return ResponseEntity.ok(ApiResponse.success(
                 null,
-                "A six-digit password reset OTP has been sent to %s".formatted(request.email()),
+                "A six-digit password reset OTP has been sent to %s. OTP: %s".formatted(request.email(), otp),
                 httpRequest.getRequestURI()
         ));
     }
@@ -98,10 +98,10 @@ public class AuthController {
             @Valid @RequestBody SendOtpRequest request,
             HttpServletRequest httpRequest
     ) {
-        emailVerificationService.sendEmailVerificationOtp(request.email());
+        String otp = emailVerificationService.sendEmailVerificationOtp(request.email());
         return ResponseEntity.ok(ApiResponse.success(
                 null,
-                "A six-digit email verification OTP has been sent to %s".formatted(request.email()),
+                "A six-digit email verification OTP has been sent to %s. OTP: %s".formatted(request.email(), otp),
                 httpRequest.getRequestURI()
         ));
     }
