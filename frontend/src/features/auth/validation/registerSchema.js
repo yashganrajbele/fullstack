@@ -5,7 +5,7 @@ export const registerSchema = z.object({
 
   email: z.email({ message: "Invalid email format" }).transform((email) => email.toLowerCase()),
 
-  password: z.string().min(5, "Password must be at least 5 characters"),
+  password: z.string().trim().min(5, "Password must be at least 5 characters"),
 
   // confirmPassword: z.string(),
 });
