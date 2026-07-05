@@ -22,8 +22,8 @@ export default function GoogleLoginButton() {
         }}
       />
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center rounded-md bg-white/75">
-          <Spinner />
+        <div className="absolute inset-0 flex items-center justify-center rounded-md bg-black/75 text-white">
+          <span>Google</span> <Spinner className="ml-1" />
         </div>
       )}
     </div>

@@ -25,9 +25,9 @@ const ForgotPasswordPage = () => {
       if (response.success) {
         toast.info("Demo Mode: Email delivery is disabled in the deployed environment due to free-tier hosting limitations. The email workflow is implemented but actual emails are not sent in this demo.", {
           id: "email-demo",
-          duration: 15000,
+          duration: 30000,
         });
-        toast.success(response.message);
+        toast.success(response.message, { duration: 30000 });
         navigate("/auth/reset-password", { state: { email: data.email } });
       }
     } catch (error) {

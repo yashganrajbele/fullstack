@@ -51,7 +51,6 @@ const ResetPasswordPage = () => {
       const response = await sendPasswordResetOtp({
         email,
       }).unwrap();
-
       toast.success(response.message);
     } catch (error) {
       console.error(error);
