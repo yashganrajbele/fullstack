@@ -5,9 +5,9 @@ import { Spinner } from "@/components/ui/spinner";
 export default function GoogleLoginButton() {
   const [googleLogin, { isLoading }] = useGoogleLoginMutation();
   return (
-    <div>
+    <div className="h-10 w-50">
       {isLoading ? (
-        <div className="h-10 w-48 flex items-center justify-center rounded-full bg-black/50 text-white">
+        <div className="h-full w-full flex items-center justify-center rounded-full bg-black/50 text-white">
           <span>Google</span> <Spinner className="ml-1" />
         </div>
       ) : (
