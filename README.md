@@ -8,10 +8,6 @@ A full-stack web application implementing a secure **Role-Based Access Control (
 
 👉 https://rbac-yash.vercel.app
 
-## 💻 GitHub Repository
-
-👉 https://github.com/yashganrajbele/fullstack
-
 ---
 
 ## 🔑 Test Credentials (Super Admin)
