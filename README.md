@@ -12,7 +12,7 @@ A full-stack web application implementing a secure **Role-Based Access Control (
 
 ## 🔑 Test Credentials (Super Admin)
 
-Use the following credentials to explore admin functionalities:
+Use the following credentials to explore super-admin functionalities:
 
 * **Username:** yash1
 * **Password:** yash1
